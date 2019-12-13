@@ -1,0 +1,19 @@
+1. Since you all have covered HTML and CSS, you are required to create login and signup pages for imaginary websites like pet-related websites, online shopping websites, etc. Now there should be certain features present in those web pages on which we can evaluate the assignment. Here are the following:-
+
+#1. Design
+It should be unique, and according to theme given to you. The color combination should be according to the theme. (this will cover basic CSS and HTML).
+
+
+#2. Responsiveness:-
+The webpage should be created in such a way that it should be viewable on different sizes of screen. (this will cover flexbox and media queries).
+
+
+#3. Form validation:-
+The input fields present in the form should have JS validation on them like the field for numbers should only take numeric input. An error can be shown in different ways. (This will cover DOM and event handling)
+
+
+NOTE This needs to be completed by Sunday Midnight.
+
+Let me know if you've any queries.
+
+Isha (Student Mentor)

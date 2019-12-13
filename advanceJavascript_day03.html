@@ -1,0 +1,55 @@
+//promise resolved
+<script>
+const namePromise = new Promise((resolve, reject) => {
+let name;
+setTimeout(() => {
+name = "abc";
+resolve(name); // resolving the promise
+}, 2000);
+});
+
+namePromise.then(result => {
+console.log(result);
+});
+</script>
+<script>
+>>  Promise rejected
+
+const namePromise = new Promise((resolve, reject) => {
+let name;
+setTimeout(() => {
+name = "Srishti";
+
+var age = prompt("Please enter your age");
+
+if(age<18)
+
+{reject("Age error occurred!"); }
+
+else 
+
+{resolve(name);}
+}, 2000);
+});
+
+namePromise.then(result => {
+console.log(result);
+}, error => {
+console.log(error);
+});
+
+
+function scaryClown() { 
+
+return new Promise(resolve => { setTimeout(() => { resolve('Clownnnn'); }, 2000); 
+
+});
+}
+async function msg() {
+
+ const msg = await scaryClown();  
+
+console.log('Message:', msg);
+}
+msg();
+</script>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>	 
+<head> 
+	<title> 
+		JavaScript Array map() Method 
+	</title> 
+</head> 
+<body> 
+	<div id="demo"></div> 
+	<script> 
+	
+		var s = document.getElementById("demo"); 
+		var arr = [2,4,6,8,13]; 
+		
+		var newArr = arr.map(function(val, index){ 
+			return {key:index, value:val*2}; 
+		}) 
+		
+		console.log(newArr) 
+		console.log(s);
+		console.log(false=='false');
+		var x=200;
+		if(x > 300 || x < 400){
+   		console.log("I am in the If block");
+		}
+		else{
+  	 	console.log("I am in the else block");
+		}	
+	</script> 
+</body> 
+</html>

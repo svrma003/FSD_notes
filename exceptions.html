@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<script>
+function myfunc(){//}
+var x,message;
+var city="switzerland";
+x=document.getElementById("abc").value;
+message=document.getElementById("demo");
+message.innerHTML="";
+try{//}
+if(x=="")
+throw "should not be empty";
+if(isNaN(x))
+throw "x is not a number";
+if(x>10)
+throw "is greater";
+if(x<3)
+throw "is lesser";
+else
+throw "x is a numbers";
+}
+catch(err){
+message.innerHTML=err;
+var a=4;
+var b=5;
+var x=a%b;
+console.log(x);
+console.log(city);
+console.log(2**4/4);
+console.log(2**3**2);
+var x=y=3;
+console.log(x,y);
+console.log('srishti gupta'.length);
+var k=4+"abc";
+console.log(k);
+var s= 3+3+"upgrad"+23+"upgrad"+2+3%2;
+console.log(s);
+var j=parseInt("3.7912");
+console.log(j);
+console.log(typeof('5'),typeof(''));
+var w=null;
+var u;
+console.log(w,u);
+console.log(2*3+7);
+//var electricity = true; // when there is electricity
+var electricity = false; // when there is no electricity
+var button = true; // when the button is on
+//var button = false;
+console.log(electricity||button);
+console.log(electricity&&button);
+var message1 = "The nearest city is";
+var city1 = "Goa";
+var displayText = message1 + " " + city1;
+console.log(displayText);
+var b= 1 + 2 + ' Hello World ' + 3 + 4;
+console.log(b);
+
+}
+}
+</script>
+<body>
+<input id="abc" type="text">
+<button type="button" onclick="myfunc()">Click here</button>
+<p id="demo"></p>
+</body>
+</html>
+

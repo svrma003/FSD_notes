@@ -1,0 +1,65 @@
+<script>
+    //proto//
+let x="hi";
+let s=3;
+let v ={count:100,name:"dell"};
+console.log(s.__proto__);
+console.log(x.__proto__);
+let animal={count:100,type:"abc"};
+let rabbit= {age:3};
+rabbit.__proto__=animal;
+console.log(rabbit.count+" "+rabbit.type);
+let vehicle ={model:"k-series", sale:300};
+let car={type:"diesel"};
+car.__proto__=vehicle;
+console.log(car.model+" "+car.type+" "+car.sale);
+//scope//
+var y=10;
+function func1(){
+    var y=20;
+     console.log("line 1 "+y);
+}
+
+func1();
+console.log("line 2 "+y);
+//this keyword//
+console.log(this);
+var person ={
+    name:"dell",
+showfunc3:function show(){
+    console.log(this);
+}
+}
+person.showfunc3();
+
+var operation={
+b:1,
+a:1,
+add: function(){
+    this.a + this.b;
+console.log("a= "+this.a+" ,b= "+this.b);       //a=1,b=1;
+var that=this;
+var show1=function(z){
+    console.log("a= "+this.a+" ,b= "+this.b);       //a=undefined,b= undefined      after using that-> a=1,b=1;
+    console.log("a= "+that.a+",b= "+that.b);
+}.bind(this,3);
+//or ysing var show1=function(){
+    //  }.bind(this,33);
+}
+show1();
+} 
+operation.add(); 
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+    <p>Advance javascript</p>
+</body>

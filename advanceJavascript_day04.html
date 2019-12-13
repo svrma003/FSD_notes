@@ -1,0 +1,119 @@
+<html>
+<!----
+<head>
+        <style>
+            #box1{
+                height:100px;
+                width:100px;
+                padding: 20px;
+                border: 2px solid black;
+            }
+            #box2{
+                height:50px;
+                width:50px;
+                padding: 20px;
+                border: 2px solid red;
+            }
+            #box3{
+                height:25px;
+                width:25px;
+                padding: 10px;
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+<body>
+    <div id="box1" onclick="callalertinside()">
+        <div id="box2" onclick="callalertinsideblackbox()">
+            <div id="box3"></div>
+        </div>
+    </div>
+</body>
+<script>
+
+function callalertinside(){//}
+alert('black box');
+}
+function callalertinsideblackbox(event){
+event.propagation();
+}
+</script>
+---->
+ 
+<div style="height: 100px; width: 100px; border: 2px solid red; padding: 20px;" onclick="callAlert(event)">
+<div style="height: 50px; width: 50px; border: 2px solid yellow; padding: 10px" onclick="callAlertInside(event)">
+<div style="height: 20px; width: 20px; border: 2px solid green" onclick="callAlertInsideSmall(event)">
+</div>
+</div>
+</div>
+</html>
+<script>
+function callAlert(event){
+alert("Red Box");
+}
+function callAlertInsideSmall(event){
+event.stopPropagation();
+alert("Green Box");
+}
+function callAlertInside() {
+event.stopPropagation();
+
+alert("Yellow Box");
+}
+</script>
+</html>
+
+
+<html>
+   <body>
+      <div id = "container">
+         <h2>Employee ID Creation</h2>
+         <form id="post_1">
+            <p>Name</p>
+            <input id = "userName" type="text">
+            <p>Job</p>
+            <input id = "userJob" type="text">
+         </form>
+         <button  id = "form-button" onclick="sendPostRequest(userName,userJob)">Submit</button>
+      </div>
+   </body>
+</html>
+<script>
+   function sendPostRequest(userName,userJob)
+              {
+              userName=document.getElementById('userName').value;
+              userJob=document.getElementById('userJob').value;
+             
+              var xhr=new XMLHttpRequest(),
+              method="POST",
+              url="https://reqres.in/api/users",
+              body=
+       {
+      "name": userName,
+      "job": userJob
+   };
+   
+              xhr.open(method,url,true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+   
+   body = JSON.stringify(body);
+   console.log(body);
+    xhr.send(body);
+              xhr.onreadystatechange=function()
+              {
+                 
+                  if(xhr.readyState===4)
+                  {
+                      
+                    console.log(xhr.responseText)
+   
+                  }
+              };
+             
+    
+   
+   }
+   
+   
+              
+</script>

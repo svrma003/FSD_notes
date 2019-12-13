@@ -1,0 +1,53 @@
+<html>
+
+<body>
+   <div id = "container">
+       <h2>Employee ID Creation</h2>
+       <form id="post_1">
+           <p>Name</p>
+           <input id = "userName" type="text">
+  
+           <p>Job</p>
+           <input id = "userJob" type="text">
+       </form>
+       <button  id = "form-button" onclick="sendPostRequest(userName,userJob)">Submit</button>
+   </div>
+</body>
+
+</html>
+
+<script>
+ function sendPostRequest(userName,userJob)
+            {userName=document.getElementById('userName').value;
+            userJob=document.getElementById('userJob').value;
+             
+            var xhr=new XMLHttpRequest(),
+            method="POST",
+            url="https://reqres.in/api/users",
+            body=
+            {
+                "name":userName,
+                "job":userJob     
+            };
+            xhr.open(method,url,true);
+            xhr.onreadystatechange=function()
+            {
+               
+               if(xhr.readyState===4)
+                {
+                    var myData = xhr.responseText;
+                    myData = JSON.parse(myData);
+                    let newData = { name:document.getElementById('userName').value, job:document.getElementById('userJob').value, ...myData  };
+                  console.log(newData);
+
+                }
+            };
+
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send();
+
+}
+
+
+            
+</script>

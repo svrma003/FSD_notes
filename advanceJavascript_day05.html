@@ -1,0 +1,24 @@
+<html>
+<input type="text" placeholder="Enter name..." id="username">
+<button onclick="fetchData()">Male or Female? </button>
+<div id="gender"></div>
+</html>
+<script>
+function fetchData(){
+var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://api.genderize.io/?name="+document.getElementById('username').value;
+xhr.open(method, url, true);
+xhr.onreadystatechange = function () {
+  if(xhr.readyState === 4 ) {
+    console.log(xhr.responseText);
+  var userData =  xhr.responseText;
+	userData = JSON.parse(userData)
+    console.log(userData);
+    document.getElementById('gender').innerHTML = `<p>${userData.gender}</p>`
+  }
+};
+xhr.send();
+}
+
+</script>

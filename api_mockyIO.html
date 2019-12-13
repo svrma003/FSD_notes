@@ -1,0 +1,33 @@
+<html>
+<body>
+<button id="btnbtn" onclick="fetchdata()">click!!!</button>
+
+
+
+</body>
+
+<script>
+    function fetchdata(){
+var xhr=new XMLHttpRequest              //create new http request;
+method="GET";            //define GET method
+url="http://www.mocky.io/v2/5dc5360f32000082007697ec";
+xhr.open(method,url,true);        
+xhr.onreadystatechange=function(){      //check if done
+    if(xhr.readyState==4){          //if proccess done? -? check
+        console.log(xhr.responseText);          //display in front end
+    }
+};
+
+    
+xhr.send();
+    }
+
+</script>
+
+
+
+
+
+
+
+</html>

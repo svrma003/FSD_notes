@@ -1,0 +1,1628 @@
+<html>
+<input type="text" placeholder="Enter country code" id="countryId">
+<button onclick="fetchData()">Fetch Data </button>
+</html>
+<script>
+function fetchData(){
+var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://api.openaq.org/v1/cities?country="+document.getElementById('countryId').value;
+xhr.open(method, url, true);
+xhr.onreadystatechange = function () {
+  if(xhr.readyState === 4 ) {
+    console.log(xhr.responseText);
+  var userData =  xhr.responseText;
+	userData = JSON.parse(userData)
+    console.log(userData);
+  }
+};
+xhr.send();
+}
+
+</script>
+
+
+
+
+
+
+
+<html>
+<input type="text" placeholder="Enter country code" id="countryId">
+<button onclick="fetchData()">Fetch Data </button>
+</html>
+<script>
+function fetchData(){
+var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://api.openaq.org/v1/cities?country="+document.getElementById('countryId').value;
+xhr.open(method, url, true);
+xhr.onreadystatechange = function () {
+  if(xhr.readyState === 4 ) {
+    console.log(xhr.responseText);
+  }
+};
+xhr.send();
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+
+<body>
+   <div id = "container">
+       <h2>Employee ID Creation</h2>
+       <form id="post_1">
+           <p>Name</p>
+           <input id = "userName" type="text">
+  
+           <p>Job</p>
+           <input id = "userJob" type="text">
+       </form>
+       <button  id = "form-button" onclick="sendPostRequest(userName,userJob)">Submit</button>
+   </div>
+</body>
+
+</html>
+
+<script>
+ function sendPostRequest(userName,userJob)
+            {userName=document.getElementById('userName').value;
+            userJob=document.getElementById('userJob').value;
+           
+            var xhr=new XMLHttpRequest(),
+            method="POST",
+            url="https://reqres.in/api/users",
+            body=
+            {
+                "name":"Ravi",
+                "job":"CEO"
+             
+            };
+            xhr.open(method,url,true);
+            xhr.onreadystatechange=function()
+            {
+               
+                if(xhr.readyState===4)
+                {
+                    
+                  console.log(xhr.responseText)
+
+                }
+            };
+
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send();
+
+}
+
+
+            
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function sendPostRequest(userName,userJob)
+            {
+userName=document.getElementById('userName').value;
+            userJob=document.getElementById('userJob').value;
+             
+            var xhr=new XMLHttpRequest(),
+            method="POST",
+            url="https://reqres.in/api/users",
+            body=
+            {
+                "name":userName,
+                "job":userJob
+            };
+            xhr.open(method,url,true);
+            xhr.onreadystatechange=function()
+            {
+               
+                if(xhr.readyState===4)
+                {
+                    var myData = xhr.responseText;
+                    myData = JSON.parse(myData);
+                    let newData = { name:document.getElementById('userName').value, job:document.getElementById('userJob').value, ...myData  };
+                  console.log(newData);
+
+                }
+            };
+
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.send();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  if(xhr.readyState===4)
+                {
+                    var myData = xhr.responseText;
+                    myData = JSON.parse(myData);
+                    let newData = { 
+               name:document.getElementById('userName').value, 
+
+              job:document.getElementById('userJob').value,
+               ...myData
+  };
+                  console.log(newData);
+
+                }
+
+
+
+
+
+
+
+
+
+https://del.dog/getcitiesinhtml
+
+
+
+
+What we will do today?
+
+1. Front end ungraded
+2. Front end graded
+
+
+
+<html>
+<button onclick="fetchImg()">Fetch Img </button>
+<img src="" id="dogImage">
+</html>
+<script>
+function fetchImg(){
+var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://dog.ceo/api/breeds/image/random";
+xhr.open(method, url, true);
+xhr.onreadystatechange = function () {
+  if(xhr.readyState === 4 ) {
+  var userData =  xhr.responseText;
+	userData = JSON.parse(userData);
+    console.log(userData);
+    document.getElementById("dogImage").src=userData.message;
+  }
+};
+xhr.send();
+}
+
+</script>
+
+
+
+
+
+https://restcountries.eu/rest/v2/name/india
+
+
+
+<html>
+<input id="countryName">
+<button onclick="fetchData()">Fetch Data </button>
+<p id="population"></p>
+<p id="subregion"></p>
+</html>
+<script>
+function fetchData(){
+let countryName = document.getElementById('countryName').value;
+var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://restcountries.eu/rest/v2/name/"+countryName;
+xhr.open(method, url, true);
+xhr.onreadystatechange = function () {
+  if(xhr.readyState === 4 ) {
+  var userData =  xhr.responseText;
+	userData = JSON.parse(userData);
+    console.log(userData);
+    document.getElementById("population").innerHTML="Population: " +  userData[0].population;   document.getElementById("subregion").innerHTML="Subregion: " + userData[0].subregion;
+  }
+};
+xhr.send();
+}
+
+</script>
+
+
+<html>
+<p id="myPara">
+My name is Ravi
+</p>
+<button onclick="editMe()" id="editBtn">Edit</button>
+<button onclick="saveMe()" id="saveBtn">Save</button>
+</html>
+<script>
+function editMe() {
+    document.getElementById('myPara').contentEditable='true';
+}
+function saveMe(){
+    document.getElementById('myPara').contentEditable='false';
+}
+</script>
+
+
+
+
+<html>
+<p id="myPara">
+My name is Ravit
+</p>
+<button onclick="editMe()" id="editBtn">Edit</button>
+<button onclick="saveMe()" id="saveBtn">Save</button>
+</html>
+<script>
+function editMe(){
+    document.getElementById('myPara').contentEditable='true';
+}
+function saveMe(){
+    document.getElementById('myPara').contentEditable='false';
+}
+</script>
+
+
+
+
+<html>
+<button onclick="likeMe()" id="likeBtn">Like</button>
+<h3 id="showCount">Be the first one to like this</h3>
+</html>
+<script>
+let count =0;
+function likeMe(){
+        document.getElementById('likeBtn').innerHTML="Liked";
+        count++;
+        document.getElementById('showCount').innerHTML=count + " likes";
+}
+</script>
+
+
+
+
+
+https://del.dog/like-comment-edit
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+Topics for today:
+
+1.  Prototypal inheritance
+2. Scope, Lifetime & Lexical Scope
+3. "this" keyword
+4. bind with this
+5. Passing value with this
+6. Pass by value and pass by ref
+
+
+
+
+
+
+
+
+
+
+
+
+Pass by val and pass by ref
+
+function foo(x) {
+console.log(x);
+x = "Ram"
+console.log(x);
+}
+foo("Sam");
+
+function bar(x) {
+console.log(x.name);
+x.name = "Ram"
+console.log(x.name);
+}
+let person = {
+"name":"Sam"
+}
+foo(person);
+
+prototypal inheritance
+
+a.__proto__
+
+
+let animal = {count : 10}
+let rabbit = {age : 100}
+console.log(rabbit.__proto__)
+rabbit.__proto__ = animal
+console.log(rabbit.moves)
+
+
+Scope, Lifetime & Lexical Scope
+var x = 10;
+function foo()
+{
+    var x = 20;
+console.log(x)
+}
+foo()
+console.log(x)
+
+
+
+function bar()
+{
+    var y = 20;
+console.log(y)
+}
+console.log(y)
+
+
+
+"this" - keyword
+var person = {
+name: "Ron",
+get: function print(){
+console.log(this);
+}
+}
+person.get()
+
+
+
+var operation = {
+   a: 1,
+   b: 2,
+  
+   add: function() {
+       this.a + this.b;
+       console.log("a = " + this.a + ", b = " + this.b);
+       var print = function() {
+           console.log("a = " + this.a + ", b = " + this.b);
+       }
+       print();
+   }
+}
+
+operation.add();
+
+//scoping chain
+
+
+var operation = {
+   a: 1,
+   b: 2,
+  
+   add: function() {
+       this.a + this.b;
+       console.log("a = " + this.a + ", b = " + this.b);
+       var print = function() {
+           console.log("a = " + this.a + ", b = " + this.b);
+       }.bind(this);
+       print();
+   }
+}
+
+operation.add();
+
+
+
+var operation = {
+   a: 1,
+   b: 2,
+  
+   add: function() {
+       this.a + this.b;
+       console.log("a = " + this.a + ", b = " + this.b);
+       var print = function(z) {
+           console.log("a = " + this.a + ", b = " + this.b + " z = " + z);
+       }.bind(this, 33);
+       print();
+   }
+}
+
+operation.add();
+
+
+
+<script>
+var x = 10;
+function bar()
+{
+    var x = 30;
+console.log("Line 2 " + x)
+}
+function car()
+{
+    var x = 40;
+console.log("Line 3 " + x)
+}
+console.log("Line 4 " + x)
+bar()
+car()
+</script>
+
+
+Topics of today: 
+1. Call by value and ref
+2. .call vs .bind. vs .apply --- apply
+3. hoisting
+4. let vs const
+5. let vs var w.r.t hoisting
+6. Classes, extends, constructors, super()
+7. Arrow Functions --- implement
+
+0. call by val and call by ref
+
+<script>
+let name = "Ram"
+function foo(x) {
+x = "Sam"
+console.log("In " + x);
+}
+foo(name);
+console.log("out " + name);
+
+
+
+let Obj1 = {name: "Ram"}
+function foo(x) {
+x.name = "Sam"
+console.log("In " + x.name);
+}
+foo(Obj1);
+console.log("out " + Obj1.name);
+</script>
+
+
+bind is for async operations
+
+1. .call()
+<script>
+var operation = {
+   a: 1,
+   b: 2,
+  
+   add: function() {
+       this.a + this.b;
+       console.log("a = " + this.a + ", b = " + this.b);
+       var print = function(z) {
+           console.log("a = " + this.a + ", b = " + this.b + " z = " + z);
+       }.call(this, 33);
+   }
+}
+
+operation.add();
+</script>
+
+2. apply()
+
+
+<script>
+var operation = {
+   a: 1,
+   b: 2,
+  
+   add: function() {
+       this.a + this.b;
+       console.log("a = " + this.a + ", b = " + this.b);
+       var print = function(z,y) {
+           console.log("a = " + this.a + ", b = " + this.b + " z = " + z + " y = " + y);
+       }.apply(this, [33,43]);
+   }
+}
+
+operation.add();
+</script>
+
+
+3. hoisting
+var a;
+console.log("a is " + a)
+a = 10;
+console.log(a)
+
+console.log("a is " + a)
+var a = 10;
+console.log("a is " + a)
+
+
+
+4. let vs const
+wrt hoisting
+
+5. create a new class, instantiate an object, use extend , use constructor, use super.
+
+
+<script>
+class Animal {
+constructor(){
+this.count  = 100
+}
+}
+
+let rabbit = new Animal();
+console.log("Animal" , rabbit);
+
+class Beast extends Animal {
+constructor(){
+super()
+this.age  = 89
+}
+};
+
+let godzilla = new Beast();
+console.log("Beast: " , godzilla)
+
+</script>
+
+6. arrow function 
+3 diff syntax
+
+let print = (firstName, lastName) => {
+
+return firstName + "  " + lastName
+
+}
+
+
+
+
+
+<script>
+class Animal {
+constructor(){
+this.count  = 199,
+this.type = "Pet"
+}}
+let rabbit = new Animal();
+class Beast extends Animal {
+constructor(){
+super()
+this.age  = 89}
+};
+let godzilla = new Beast();
+console.log("Beast: " , godzilla)
+
+
+
+https://del.dog/day01-advjs
+
+Todays Topic:
+1. Map
+2. Reduce
+3. Filter
+4. .apply() application
+5. Spread operator
+6. Rest parameter
+7. Template Literal
+8. Destructuring
+
+1. Map reduce filter
+
+let a  = [1,2,3,4,5]
+a.map(function(item) {
+ console.log(item*2);
+})
+
+let a  = [1,2,3,4,5]
+let res = a.filter(function(item) {
+ return item > 4
+})
+console.log(res)
+
+let a  = [1,2,3,4,5]
+a.reduce(function (sum,eachItem) {
+	return sum + eachItem
+})
+
+2. .apply application
+
+function getSum(a,b,c) {
+console.log(a+b+c)
+}
+let arr = [1,2,3]
+getSum.(...arr);
+
+3. Spread opoerator to pass arguments from array
+getSum(...arr);
+
+4. Spread operator for concatenation:
+
+let a = [1,2,3]
+let b = [5,6,7]
+let c = [...a,...b]
+console.log(c)
+
+5. Copy by value using spread
+
+let a = [1,2,3]
+let b = ...a;
+a.push(9);
+console.log(b);
+console.log(a);
+
+6. Copy Objects with spread
+let obj1 = {a:2,b:3}
+let obj2 = {...obj1}
+
+7. Rest Parameter
+
+function foo(...numbers){
+numbers.map(eachItem => {
+console.log(eachItem);
+})
+}
+foo(1,2,3,4)
+
+8. Rest Parameter with other variable
+
+function foo(multiplier, ...numbers){
+numbers.map(eachItem => {
+console.log(eachItem*multiplier);
+})
+}
+foo(5, 1,2,3,4)
+
+9. Template Literal
+
+
+let firstName = "Ravi";
+let lastName = "Sharma";
+
+console.log("My name is " + firstName + " " + lastName );
+console.log(`My name is  ${firstName}  ${lastName}` );
+
+>>> No new line
+https://del.dog/18-01
+
+
+10. Destructuring
+
+
+let mobile = ['+91',  '83', '7647382']
+const [country,operator,code] = mobile;
+console.log(country)
+
+
+const obj1 = {
+
+name: "Ravi",
+age: 100
+}
+const {name , age} =  obj1;
+console.log(name);
+
+
+Today's topics
+0. Event loop
+1. Left out yesterday.
+2.  Callbacks : 
+3. Promises
+
+
+console.log('Start');
+setTimeout(function(){
+console.log('Middle');
+},0)
+console.log('End')
+
+3. Event Loop : 
+JS Stack -> console.log
+Web API , C++ API -> setTimeout
+Queue
+4. callback
+
+<script>
+function multiply(a,b){
+return a*b;
+}
+function add(a,b){
+return a+b;
+}
+function getResult(x,y,operator){
+console.log( operator(x,y))
+}
+getResult(3,4,multiply);
+getResult(3,4,add);
+</script>
+
+5. Promise resolved
+
+const namePromise = new Promise((resolve, reject) => {
+ let name;
+ // get data from database
+ setTimeout(() => {
+   name = "Srishti";
+   resolve(name); // resolving the promise
+ }, 2000);
+});
+
+namePromise.then(result => {
+ greet(result);
+}, error => {
+ console.log(new Error(error));
+});
+
+
+6. Promise reject
+
+const namePromise = new Promise((resolve, reject) => {
+ let name;
+ // get data from database
+ setTimeout(() => {
+   name = "Srishti";
+   reject("Some error occurred!"); // rejecting the promise
+ }, 2000);
+});
+
+namePromise.then(result => {
+ greet(result);
+}, error => {
+ console.log(new Error(error));
+});
+const promise  =  new Promise (executer);
+new Promise((resolve,reject)=> {
+//code here
+})
+
+
+
+state => pending, fullfiled
+result => undefined -> output
+
+var getName = (cb) => {
+var name;
+setTimeout(()=> {
+name = "Sakshi";
+cb(name)
+},1000)
+}
+greet = (name) => {
+console.log(`Hi ${name}`)
+}
+getName(greet);
+
+
+function doHomework(subject) {
+alert("Doing my homework in 3 seconds");
+setTimeout(()=> {
+  doneHomework();
+},3000)
+}
+function doneHomework() {
+  alert('Finished my homework');
+}
+doHomework('math', doneHomework);
+
+
+
+
+
+function doHomework(subject, callback) {
+alert("Doing my homework in 5 seconds");
+setTimeout(()=> {
+  callback(subject);
+},5000)
+}
+function doneHomework(subjectName) {
+  alert(`Finished my homework of ${subjectName}`);
+}
+doHomework('math', doneHomework);
+
+
+
+
+var promise1 = new Promise(function(resolve, reject) {
+alert("Doing my homework in 5 seconds");
+  setTimeout(function() {
+    resolve();
+  }, 5000);
+});
+
+promise1.then(function() {
+  alert('Finished my homework');
+});
+
+
+
+
+
+
+
+
+
+Simple callback:
+
+
+function doHomework(subject, callback) {
+  alert(`Starting my ${subject} homework.`);
+  callback();
+}
+function alertFinished(){
+  alert('Finished my homework');
+}
+doHomework('math', alertFinished);
+
+
+
+
+
+var getName = ()=> {
+ return "Ravi";
+}
+greet = (name) => {
+ console.log("Hi " + name)
+}
+greet(getName());
+
+
+
+>> callback with setTimeout
+
+var getName = (callback) => {
+var name;
+setTimeout(()=> {
+name = "Sakshi";
+callback(name);
+},5000)
+}
+greet = (name) => {
+console.log("Hi "  +  name)
+}
+getName(greet);
+
+
+Promise resolved
+
+
+
+
+
+
+Promise Rejected
+
+
+
+const namePromise = new Promise((resolve, reject) => {
+ let name;
+ // get data from database
+ setTimeout(() => {
+   name = "Srishti";
+   reject("Some error occurred!"); // rejecting the promise
+ }, 2000);
+});
+
+namePromise.then(result => {
+ greet(result);
+}, error => {
+ console.log(new Error(error));
+});
+
+
+
+
+
+Q1.  Filter rebels
+
+
+var pilots = [
+  {
+    id: 40,
+    name: "Iden Versio",
+    faction: "Empire",
+  },
+  {
+    id: 66,
+    name: "Thane Kyrell",
+    faction: "Rebels",
+  }
+];
+
+var rebels = pilots.filter((pilot) => {
+  return pilot.faction === "Rebels";
+});
+
+
+var empire = pilots.filter((pilot) => {
+  return pilot.faction === "Empire";
+});
+console.log(rebels)
+
+
+
+https://del.dog/question01
+
+
+
+
+Random Function -> 
+
+function print(x){
+ return new Promise(function(resolve, reject){
+   setTimeout(function(){
+      console.log(x)
+      resolve();
+     }, Math.random()*100
+   )
+ })
+}
+
+
+}
+
+Normal Implementation: 
+function printLetters(){
+  print("a");
+  print("b");
+  print("c");
+}
+printLetters();
+
+.then promises -> 
+
+function printLetters(){
+ print("a")
+ .then(function(){
+   return print("b");
+ })
+ .then(function(){
+   return print("c");
+ })
+}
+printLetters();
+
+
+async await -> 
+
+async function printLetters(){
+   await print("a");
+   await print("b");
+   await print("c");
+}
+printLetters()
+
+function printLetters(){
+   print("a", function(){
+      print("b", function(){
+         print("c", function(){
+      })
+   })
+})
+}
+printLetters()
+const namePromise = new Promise((resolve, reject) => {
+let name;
+setTimeout(() => {
+name = "Srishti";
+
+var age = prompt("Please enter your age");
+
+if(age<18)
+
+{reject("Age error occurred!"); }
+
+else 
+
+{resolve(name);}
+}, 2000);
+});
+
+namePromise.then(result => {
+console.log(result);
+}, error => {
+console.log(new Error(error));
+});
+
+
+
+<html>
+
+<body>
+   <div id = "container">
+       <h2>Employee ID Creation</h2>
+       <form id="post_1">
+           <p>Name</p>
+           <input id = "userName" type="text">
+           <p>Job</p>
+           <input id = "userJob" type="text">
+       </form>
+       <button  id = "form-button" onclick="sendPostRequest()">Submit</button>
+   </div>
+</body>
+
+</html>
+
+<script>
+ function sendPostRequest()
+            {
+            var xhr=new XMLHttpRequest(),
+            method="POST",
+            url="https://reqres.in/api/users",
+            body=
+            {
+                "name": document.getElementById('userName').value,
+                "job": document.getElementById('userJob').value
+             
+            };
+            xhr.open(method,url,true);
+            xhr.onreadystatechange=function()
+            {
+                if(xhr.readyState===4)
+                {       
+                  console.log(xhr.responseText)
+
+                }
+            };
+
+  xhr.send(body);
+
+}
+
+
+            
+</script>
+
+
+
+<html>
+   <body>
+      <div id = "container">
+         <h2>Employee ID Creation</h2>
+         <form id="post_1">
+            <p>Name</p>
+            <input id = "userName" type="text">
+            <p>Job</p>
+            <input id = "userJob" type="text">
+         </form>
+         <button  id = "form-button" onclick="sendPostRequest(userName,userJob)">Submit</button>
+      </div>
+   </body>
+</html>
+<script>
+   function sendPostRequest(userName,userJob)
+              {
+              userName=document.getElementById('userName').value;
+              userJob=document.getElementById('userJob').value;
+             
+              var xhr=new XMLHttpRequest(),
+              method="POST",
+              url="https://reqres.in/api/users",
+              body=
+       {
+      "name": userName,
+      "job": userJob
+   };
+   
+              xhr.open(method,url,true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+   
+   body = JSON.stringify(body);
+   console.log(body);
+    xhr.send(body);
+              xhr.onreadystatechange=function()
+              {
+                 
+                  if(xhr.readyState===4)
+                  {
+                      
+                    console.log(xhr.responseText)
+   
+                  }
+              };
+            
+   }
+   
+   
+              
+</script>
+
+https://del.dog/POST-edited
+
+
+<html>
+   <body>
+      <div id = "container">
+         <h2>Employee ID Creation</h2>
+         <form id="post_1">
+            <p>Name</p>
+            <input id = "userName" type="text">
+            <p>Job</p>
+            <input id = "userJob" type="text">
+         </form>
+         <button  id = "form-button" onclick="sendPostRequest(userName,userJob)">Submit</button>
+      </div>
+   </body>
+</html>
+<script>
+   function sendPostRequest(userName,userJob)
+              {
+              userName=document.getElementById('userName').value;
+              userJob=document.getElementById('userJob').value;
+             
+              var xhr=new XMLHttpRequest(),
+              method="POST",
+              url="https://reqres.in/api/users",
+              body=
+       {
+      "name": userName,
+      "job": userJob
+   };
+   
+              xhr.open(method,url,true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+   
+   body = JSON.stringify(body);
+   console.log(body);
+    xhr.send(body);
+              xhr.onreadystatechange=function()
+              {
+                 
+                  if(xhr.readyState===4)
+                  {
+                      
+                    console.log(xhr.responseText)
+   
+                  }
+              };
+             
+  
+   
+   }
+   
+   
+              
+</script>
+
+
+
+
+
+
+Today's topics:
+
+1. Self Invoking functions
+2. Promises
+3. Async Await
+
+[https://del.dog/promise](https://del.dog/promise)
+
+state => pending, fullfiled/rejected
+result => undefined -> output
+
+const promise = new Promise (executer);
+new Promise((resolve,reject)=> {
+//code here
+})
+
+>> Promise resolved
+
+const namePromise = new Promise((resolve, reject) => {
+let name;
+setTimeout(() => {
+name = "Ravi";
+resolve(name); // resolving the promise
+}, 2000);
+});
+
+namePromise.then(result => {
+console.log(result);
+});
+
+>>  Promise rejected
+
+const namePromise = new Promise((resolve, reject) => {
+let name;
+setTimeout(() => {
+name = "Srishti";
+
+var age = prompt("Please enter your age");
+
+if(age<18)
+
+{reject("Age error occurred!"); }
+
+else 
+
+{resolve(name);}
+}, 2000);
+});
+
+namePromise.then(result => {
+console.log(result);
+}, error => {
+console.log(error);
+});
+
+Async Await —- syntax sugar
+
+async function f() { 
+
+return 1;
+
+ }
+
+async function f() { return 1; } 
+
+f().then(console.log(result));
+
+function f() {
+let promise = Promise.resolve(1);
+let result = await promise; // Syntax error
+}
+
+async function f() {
+
+let promise = new Promise((resolve, reject) => {
+setTimeout(() => resolve("done!"), 5000)
+});
+
+console.log("Done!!!");
+}
+
+f();
+
+function scaryClown() { 
+
+return new Promise(resolve => { setTimeout(() => { resolve('Clownnnn'); }, 2000); 
+
+});
+}
+async function msg() {
+
+ const msg = await scaryClown();  
+
+console.log('Message:', msg);
+}
+msg(); 
+
+function scaryClown() { 
+
+return new Promise(resolve => { setTimeout(() => { resolve('Clownnnnnn'); }, 2000); 
+
+});
+}
+ function msg() {
+
+ const msg =  scaryClown();  
+
+console.log('Message:', msg);
+}
+msg(); 
+
+Multiple promises: 
+
+function who() {
+
+ return new Promise(resolve => { setTimeout(() => { resolve('Joker'); }, 2000);
+
+ });
+}
+function what() { 
+
+return new Promise(resolve => { setTimeout(() => { resolve('loves'); }, 4000); 
+
+});
+}
+function where() {
+
+ return new Promise(resolve => { setTimeout(() => { resolve('Magic'); }, 6000);
+
+ });
+}
+async function msg() {
+
+ const a = await who();
+
+console.log(a)
+
+ const b = await what(); 
+
+console.log(b)
+
+const c = await where(); 
+
+console.log(c)
+
+console.log(`${ a } ${ b } ${ c }`);
+}
+msg(); 
+
+Self invoking functions
+
+(function () {
+
+console.log("hi");
+
+}())
+
+Random Function ->
+
+function print(x){
+return new Promise(function(resolve, reject){
+setTimeout(function(){
+console.log(x)
+resolve();
+}, Math.random()*100
+)
+})
+}
+
+}
+
+Normal Implementation:
+
+function printLetters(){
+print("a");
+print("b");
+print("c");
+}
+printLetters();
+
+function printLetters(){
+print("a")
+.then(function(){
+return print("b");
+})
+.then(function(){
+return print("c");
+})
+}
+printLetters();
+
+async await ->
+
+async function printLetters(){
+await print("a");
+await print("b");
+await print("c");
+}
+printLetters()
+
+function printLetters(){
+print("a", function(){
+print("b", function(){
+print("c", function(){
+})
+})
+})
+}
+printLetters()
+
+Topics→
+
+1. Event Bubbling
+2. POST request in Backend
+
+0
+
+[https://del.dog/event](https://del.dog/event)
+
+[https://del.dog/POST](https://del.dog/POST)-edited
+
+<html>
+<div style="height: 100px; width: 100px; border: 2px solid red; padding: 20px;" onclick="callAlert(event)">
+<div style="height: 50px; width: 50px; border: 2px solid yellow" onclick="callAlertInside(event)">
+</div>
+</div>
+</html>
+<script>
+function callAlert(event){
+event.preventDefault()
+
+alert("Red Box");
+}
+function callAlertInside() {
+event.stopPropagation()
+alert("Yellow Box");
+}
+</script>
+
+<html>
+
+<body>
+<div id = "container">
+<h2>Employee ID Creation</h2>
+<form id="post_1">
+<p>Name</p>
+<input id = "userName" type="text">
+<p>Job</p>
+<input id = "userJob" type="text">
+</form>
+<button id = "form-button" onclick="sendPostRequest()">Submit</button>
+</div>
+</body>
+
+</html>
+
+<script>
+function sendPostRequest()
+{
+var xhr=new XMLHttpRequest(),
+method="POST",
+url="[https://reqres.in/api/users](https://reqres.in/api/users)",
+body=
+{
+"name": document.getElementById('userName').value,
+"job": document.getElementById('userJob').value
+
+    };
+            xhr.open(method,url,true);
+            xhr.onreadystatechange=function()
+            {
+                if(xhr.readyState===4)
+                {       
+                  console.log(xhr.responseText)
+    
+                }
+            };
+
+xhr.send(body);
+
+}
+
+</script>
+
+<html>
+<body>
+<div id = "container">
+<h2>Employee ID Creation</h2>
+<form id="post_1">
+<p>Name</p>
+<input id = "userName" type="text">
+<p>Job</p>
+<input id = "userJob" type="text">
+</form>
+<button id = "form-button" onclick="sendPostRequest(userName,userJob)">Submit</button>
+</div>
+</body>
+</html>
+<script>
+function sendPostRequest(userName,userJob)
+{
+userName=document.getElementById('userName').value;
+userJob=document.getElementById('userJob').value;
+
+    var xhr=new XMLHttpRequest(),
+              method="POST",
+              url="<https://reqres.in/api/users>",
+              body=
+       {
+      "name": userName,
+      "job": userJob
+
+};
+
+    xhr.open(method,url,true);
+    xhr.setRequestHeader
+    ('Content-Type', 'application/json');
+
+body = JSON.stringify(body);
+console.log(body);
+xhr.send(body);
+xhr.onreadystatechange=function()
+{
+
+    if(xhr.readyState===4)
+                  {
+                      
+                    console.log(xhr.responseText)
+    
+                  }
+              };
+
+}
+
+</script>
+
+1. 
+
+[`https://api.genderize.io/?name=`](https://api.genderize.io/?name=Katy)
+
+[https://del.dog/gender](https://del.dog/gender)
+
+Topics for today:
+
+1. How to setup reactjs : 1. install nodejs 2. install creat ereact app 
+2. Diff between JSX and HTML : 1,  div wrap 2. closing tag needed 3. className 4 case sensitive
+3. {} state of a react app
+4. [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+npm —version
+
+>> run the above code in cmd
+
+1. Install NodeJs + NPM
+2. Use NPM to download Create React App
+npm i -g create-react-app
+3. Use Create React App to create our project
+
+npm init react-app your-app-name
+
+create-react-app your-app-name (don't use CAPS)
+
+4. Start Server : npm start (inside the folder) 
+
+[https://del.dog/react-chitkara.txt](https://del.dog/react-chitkara.txt)
+
+[https://repl.it/languages/reactjs](https://repl.it/languages/reactjs)
+
+1. The folder structure in ReactJs
+2. The App.js
+3. What is JSX
+4. How is it diff from HTML + JS
+5. [State in react](https://del.dog/react-101.txt)
+6. Rendering state
+7. .map with react
+8. Creating new component
+9. Importing and exporting components
+
+For offline users → 
+
+Step 1: Open Project FOLDER in IDE
+Step 2: Open CMD inside the project folder.
+Step 3: Run "npm start" in CMD 
+A server will start at [localhost](http://localhost):3000
+
+For Online users:
+
+[https://repl.it/languages/reactjs](https://repl.it/languages/reactjs)
+
+[https://del.dog/r101.txt](https://del.dog/r101.txt)
+
+[https://del.dog/react-101.txt](https://del.dog/react-101.txt)

@@ -1,0 +1,84 @@
+<script>
+    let obj1={name:"abc"}
+    function foo(x){
+        x.name="def";
+        console.log("in "+x.name);
+    }
+    foo(obj1);
+    console.log("out "+obj1.name);
+    
+    var operation={
+b:1,
+a:1,
+add: function(){
+console.log("a= "+this.a+" ,b= "+this.b);       //a=1,b=1;
+var that=this;
+var show1=function(z){
+    console.log("a= "+this.a+" ,b= "+this.b+" z= "+z);      
+    
+}.call(this,3)
+//or ysing var show1=function(){
+    //  }.bind(this,33);
+}
+} 
+operation.add(); 
+    
+//HOISTING
+    var a;
+    console.log("a is "+a);
+    a=10;
+    console.log(a);
+    </script>
+
+<script>
+//Inheritance       INHERITANCE
+class Animal{
+constructor(){//}
+this.count=100;
+this.type="abc";
+}
+
+}
+let rabbit =new Animal();
+console.log("animal ",rabbit);
+
+class Beast extends Animal{
+    constructor(){
+        super();
+        this.age=3000;
+    }
+};
+let godzilla =new Beast();
+console.log("beast is "+godzilla);
+
+</script>
+
+<script>
+
+let add=(a,b) =>{
+    return a+b;
+}
+let res= add(2,3);
+console.log(res);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

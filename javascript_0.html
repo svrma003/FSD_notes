@@ -1,0 +1,36 @@
+<html>
+<body>
+<h1 id="title">text abcdefg</h1>
+<div id="list1"></div>
+
+<button id="mybtn1" onclick="showAll()">click here</button> 
+
+</body>
+<script>
+    
+    document.getElementById("mybtn1").addEventListener("onclick",showAll);
+    function showAll(){
+let arr={"story","pen","books"};
+for(var i=0;i<3;i++){
+var newtext=document.createElement('li');
+newtext.innerHTML=arr[i];
+document.getElementById("list1").appendChild(newtext);
+}}
+
+
+
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

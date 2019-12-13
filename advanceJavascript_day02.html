@@ -1,0 +1,29 @@
+<script>
+let firstname='abc';
+let lastname = 'def';
+
+console.log("name is "+firstname+" "+lastname);
+console.log(`name is ${lastname} ${firstname}`);
+
+let mobile =['1','2','8'];
+const[country,operator,code] = mobile;
+console.log("country "+(country));
+console.log("operator "+operator);
+console.log("code "+code);
+
+
+console.log("start");
+setTimeout(function(){
+    console.log("Middle");
+},100)
+console.log("end");
+
+function dohomework(subject,callback){
+    alert(`starting ${subject} homework`);
+    callback();
+}
+function alertFinished(){
+    alert(`finihsed homework`);
+}N
+dohomework("dell isnpiron",subject);
+</script>

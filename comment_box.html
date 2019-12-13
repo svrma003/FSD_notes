@@ -1,0 +1,11 @@
+<script>
+var myDiv=document.getElementById("listOfComments");
+function addItem(){
+    let itemValue= document.getElementById("commentid").value;
+    var p= document.createElement("p");---------->> create para tag;
+    p.style.csstext="border:2px solid blue;";
+    p.innerHTML=(itemValue);--------->>> store value insode tag
+    myDiv.appendChild(p);---------->>>>append it to div;
+}
+
+</script>
